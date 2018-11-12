@@ -10,15 +10,19 @@
  * Implementation of basic chess functions.
  * ----------------------------------------------------------
  */
-
+#include "chess.h"
  bool 	is_piece (struct ChessPiece pc, enum PieceColor color, enum PieceType type){
    return false;
  }
  void 	init_chess_board (ChessBoard chess_board);{
-
+   for (int i = 0; i < 8; i++) {
+     for (int j = 0; j < count; j++) {
+       chess_board[i][j];
+     }
+   }
  }
  struct ChessSquare* get_square (ChessBoard chess_board, File file, Rank rank){
-
+return 0;
  }
  bool 	is_square_occupied (ChessBoard chess_board, File file, Rank rank)
  {
@@ -29,7 +33,8 @@
    return false;
  }
  struct ChessPiece 	get_piece (ChessBoard chess_board, File file, Rank rank){
-
+ return struct ChessPiece return_value;
+}
  void 	setup_chess_board (ChessBoard chess_board){
 
  }

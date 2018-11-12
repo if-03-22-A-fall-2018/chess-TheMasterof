@@ -13,6 +13,13 @@
  #ifndef ___CHESS_H
  #define ___CHESS_H
 
+ enum  	PieceType {
+   NoPiece, Pawn, Rook, Knight, Bishop,
+   Queen, King
+ };
+ enum  	PieceColor { White, Black };
+ enum  	MoveType { NormalMove, CaptureMove };
+ 
  struct  	ChessPiece{
    enum Piececolor color;
    enum PieceType type;
@@ -26,12 +33,7 @@
  typedef char File;
  typedef int Rank;
 
- enum  	PieceType {
-   NoPiece, Pawn, Rook, Knight, Bishop,
-   Queen, King
- };
- enum  	PieceColor { White, Black };
- enum  	MoveType { NormalMove, CaptureMove };
+
 
  bool 	is_piece (struct ChessPiece pc, enum PieceColor color, enum PieceType type);
  void 	init_chess_board (ChessBoard chess_board);
