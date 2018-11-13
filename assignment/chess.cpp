@@ -11,29 +11,26 @@
  * ----------------------------------------------------------
  */
 #include "chess.h"
- bool 	is_piece (struct ChessPiece pc, enum PieceColor color, enum PieceType type){
-   return false;
- }
- void 	init_chess_board (ChessBoard chess_board);{
-   for (int i = 0; i < 8; i++) {
-     for (int j = 0; j < count; j++) {
-       chess_board[i][j];
-     }
-   }
- }
- struct ChessSquare* get_square (ChessBoard chess_board, File file, Rank rank){
-return 0;
- }
+bool is_square_ok (File file, Rank rank){
+  return (file>='a'&&file<='h')&&(rank>=1&&rank<=8);
+}
  bool 	is_square_occupied (ChessBoard chess_board, File file, Rank rank)
  {
-   return false;
+   return chess_board[rank][file].is_occupied;
  }
  bool 	add_piece (ChessBoard chess_board, File file, Rank rank, struct ChessPiece piece)
  {
-   return false;
+   if (is_square_ok(file,rank)||chess_board[rank-1][file-'a'].is_occupied==true) {
+     return false;
+   }
+   else{
+     chess_board[rank-1][file-'a'].is_occupied=true;
+     return true;
+   }
  }
  struct ChessPiece 	get_piece (ChessBoard chess_board, File file, Rank rank){
- return struct ChessPiece return_value;
+   struct ChessPiece return_value;
+ return return_value;
 }
  void 	setup_chess_board (ChessBoard chess_board){
 
@@ -53,7 +50,7 @@ return 0;
  bool 	squares_share_knights_move (File s1_f, Rank s1_r, File s2_f, Rank s2_r){
    return false;
  }
- bool 	squares_share_pawns_move (enum PieceColor color, enum MoveType move, File s1_f, Rank s1_r, File s2_f, Rank s2_r){
+ bool 	squares_share_pawns_move (enum Piececolor color, enum MoveType move, File s1_f, Rank s1_r, File s2_f, Rank s2_r){
    return false;
  }
  bool 	squares_share_queens_move (File s1_f, Rank s1_r, File s2_f, Rank s2_r){
